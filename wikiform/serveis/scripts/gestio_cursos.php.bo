@@ -421,7 +421,7 @@ error_reporting(E_ALL & ~E_NOTICE);
 
 include_once("funcions.php");
 
-$cami = "/dades/wikiform/data/pages/z_gestio/aux/";
+$cami = "../../wikiform/data/pages/z_gestio/aux/";
 $fitxer_cursos = "infocursos.txt";
 $fitxer_marcats = $cami.$fitxer_cursos;
 //$novetats  = "/dades/wikiform/data/pages/z_gestio/aux/cursos_a_marcar_novetat.txt";
