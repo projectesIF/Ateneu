@@ -41,14 +41,27 @@ if(strpos($_SERVER["REQUEST_URI"], 'index') == false) {
 
 </div>
 
-
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-60938041-1', 'auto');
-  ga('send', 'pageview');
-
+<!-- ********** WebTrends ********** -->
+<script src="http://www.gencat.cat/js/analitica/webtrends2.js" language="Javascript"></script>
+<script language="Javascript">
+    var _tag = new WebTrends();
+    _tag.dcsid="dcs222fkhwufkgq4l9kkjw3lo_1p3l";
+    _tag.dcsGetId();
 </script>
+<script language="Javascript">
+    _tag.DCSext.wt_departament="Ensenyament";
+    _tag.DCSext.wt_web1="Ateneu";
+    _tag.DCSext.wt_web2="";
+    _tag.DCSext.wt_web3="";
+    _tag.WT.cg_n="";
+    _tag.WT.cg_s="";
+    _tag.DCSext.subcontent1="";
+    _tag.DCSext.subcontent2="";
+    _tag.DCSext.subcontent3="";
+    _tag.DCSext.subcontent4="";
+    _tag.dcsCollect();
+</script>
+<noscript>
+  <img alt="" name="DCSIMG" width="1" height="1" src="http://statse.webtrendslive.com/dcs222fkhwufkgq4l9kkjw3lo_1p3l/njs.gif?dcsuri=/nojavascript&amp;WT.js=No&amp;WT.tv=8.0.2"/>
+</noscript>
+<!-- /WebTrends -->

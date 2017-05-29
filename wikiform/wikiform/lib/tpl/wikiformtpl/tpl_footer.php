@@ -28,6 +28,29 @@ if (!defined('DOKU_INC')) die();
             src="<?php echo tpl_basedir(); ?>images/button-dw.png" width="80" height="15" alt="Driven by DokuWiki" /></a>
     </div>
 </div></div><!-- /footer -->
-
+<!-- ********** WebTrends ********** -->
+<script src="http://www.gencat.cat/js/analitica/webtrends2.js" language="Javascript"></script>
+<script language="Javascript">
+    var _tag = new WebTrends();
+    _tag.dcsid="dcs222fkhwufkgq4l9kkjw3lo_1p3l";
+    _tag.dcsGetId();
+</script>
+<script language="Javascript">
+    _tag.DCSext.wt_departament="Ensenyament";
+    _tag.DCSext.wt_web1="Ateneu";
+    _tag.DCSext.wt_web2="";
+    _tag.DCSext.wt_web3="";
+    _tag.WT.cg_n="";
+    _tag.WT.cg_s="";
+    _tag.DCSext.subcontent1="";
+    _tag.DCSext.subcontent2="";
+    _tag.DCSext.subcontent3="";
+    _tag.DCSext.subcontent4="";
+    _tag.dcsCollect();
+</script>
+<noscript>
+    <img alt="" name="DCSIMG" width="1" height="1" src="http://statse.webtrendslive.com/dcs222fkhwufkgq4l9kkjw3lo_1p3l/njs.gif?dcsuri=/nojavascript&amp;WT.js=No&amp;WT.tv=8.0.2"/>
+</noscript>
+<!-- /WebTrends -->
 <?php
 tpl_includeFile('footer.html');
