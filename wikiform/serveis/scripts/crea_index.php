@@ -12,6 +12,7 @@
     <pre>
 
         <?php
+        $camiArrel = '../../wikiform/data';
 // INFORMACIONS SOBRE L'ÚS DE LA VARIABLE $tot
 // $tot = 1 permet de generar un fitxer amb TOTS els cursos, estiguin inactius o no
 // $tot = 0 permet de generar un fitxer NOMÉS amb els cursos que  volem que apareguin a la portada   
@@ -32,7 +33,7 @@
         // si no venim del formulari no toquem el contingut de 'infocursos.txt' 
         // en cas contrari esborraríem el contingut del fitxer
         if ($_POST['set'] == "yes") {
-            $cami = "/dades/wikiform/data/pages/z_gestio/aux/";
+            $cami = $camiArrel."/pages/z_gestio/aux/";
             $fitxer_cursos = "infocursos.txt";
             $fitxer_marcats = $cami . $fitxer_cursos;
 
@@ -111,17 +112,17 @@
         // buida l'arxiu d'errors
         write_error('errors.log', "", 'w');
 
-        $fitxer_marcats = "/dades/wikiform/data/pages/z_gestio/aux/infocursos.txt";
+        $fitxer_marcats = $camiArrel."/pages/z_gestio/aux/infocursos.txt";
         $marcats = getcursosmarcats($fitxer_marcats);
         $novetat = $marcats['novetat'];
         $inactiu = $marcats['inactius'];
         $elaboracio = $marcats['elaboracio'];
         $actualitzat = $marcats['actualitzats'];
 
-        $fitxer = "/dades/wikiform/data/pages/z_gestio/aux/base_index_cursos.txt";
+        $fitxer = $camiArrel."/pages/z_gestio/aux/base_index_cursos.txt";
         $afitxer = file($fitxer);
 
-        $fitxerCursosUnitats = "/dades/wikiform/data/pages/z_gestio/aux/base_cursos_unitats.txt";
+        $fitxerCursosUnitats = $camiArrel."/pages/z_gestio/aux/base_cursos_unitats.txt";
         $aunitats = file($fitxerCursosUnitats);
         $aNomUnitats = file($fitxerUnitats);
         $unitats = array();
@@ -131,7 +132,7 @@
         }
         array_shift($unitats);
 
-        $fitxerUnitats = "/dades/wikiform/data/pages/z_gestio/aux/base_unitats.txt";
+        $fitxerUnitats = $camiArrel."/pages/z_gestio/aux/base_unitats.txt";
         $nomUnitats = array();
         foreach ($aNomUnitats as $nom) {
             $tros = explode("|", $nom);
@@ -209,7 +210,7 @@
                             //		echo "%%% " .$dirs_arxius[count($dirs_arxius)-2]."<br>";
                             //$resultat[] =  "  * [[cursos:".$desti." |".$titolcurs[0]."]]".$img_nou.$img_elaboracio.$img_actualitzat."\n";	
                         }
-                        $titolcurs = llegeixtitols("/dades/wikiform/data/pages/" . $path);
+                        $titolcurs = llegeixtitols($camiArrel."/pages/" . $path);
                         // print_r($titolcurs);
                         $img_nou = "";
                         if (in_array($dirs_arxius[count($dirs_arxius) - 2], $novetat))
@@ -324,26 +325,26 @@
         if ($tot != 1) {
             echo "<br />El fitxer creat inclou només  els cursos actius (apte per a ser publicat a la pàgina inicial)";
 
-            $fitxer = "/dades/wikiform/data/pages/z_gestio/aux/index_cursos.txt";
+            $fitxer = $camiArrel."/pages/z_gestio/aux/index_cursos.txt";
         } else {
             echo "<br />El fitxer inclou tots els cursos, inclosos els inactius (destinat a la gestió)";
 
-            $fitxer = "/dades/wikiform/data/pages/z_gestio/aux/index_cursos_gestio.txt";
+            $fitxer = $camiArrel."/pages/z_gestio/aux/index_cursos_gestio.txt";
         }
-        $cami2 = "/dades/wikiform/data/media/";
+        $cami2 = $camiArrel."/media/";
         $fitxer2 = $cami2 . "permisoswiki.csv";
         //$fitxer2 = "/dades/wikiform/data/pages/z_gestio/aux/permisoswiki.csv";
-        $fitxer3 = "/dades/wikiform/data/pages/z_gestio/aux/permisoswiki.txt";
+        $fitxer3 = $camiArrel."/pages/z_gestio/aux/permisoswiki.txt";
 
         write_error('errors.log', "\n" . $alerta, 'a');
         write_error('errors.log', "\n\n" . "Data de creació de l'índex de cursos: " . date("d/m/Y  G:i:s"), 'a');
 
-        if (file_put_contents("/dades/wikiform/data/pages/z_gestio/aux/temp.txt", $resultat) === false) {
+        if (file_put_contents($camiArrel."/pages/z_gestio/aux/temp.txt", $resultat) === false) {
             if ($tot != 1)
                 echo "No s'ha pogur crear el fitxer temporal";
         }else {
             unlink($fitxer);
-            rename("/dades/wikiform/data/pages/z_gestio/aux/temp.txt", $fitxer);
+            rename($camiArrel."/pages/z_gestio/aux/temp.txt", $fitxer);
             echo "<br />Fitxer '$fitxer' creat amb èxit <br /><br />";
             echo "<br />Cursos sense títol: <br />";
             include('errors.log');
@@ -357,12 +358,12 @@
             echo "<br />Fitxer '{$cami}{$fitxer2}' creat amb èxit <br /><br />";
         }
 
-        if (file_put_contents("/dades/wikiform/data/pages/z_gestio/aux/temp3.txt", $resultat_permisos) === false) {
+        if (file_put_contents($camiArrel."/pages/z_gestio/aux/temp3.txt", $resultat_permisos) === false) {
             if ($tot != 1)
                 echo "No s'ha pogur crear el fitxer temporal";
         }else {
             unlink($fitxer3);
-            rename("/dades/wikiform/data/pages/z_gestio/aux/temp3.txt", $fitxer3);
+            rename($camiArrel."/pages/z_gestio/aux/temp3.txt", $fitxer3);
             echo "<br />Fitxer '{$fitxer3}' creat amb èxit <br /><br />";
         }
 

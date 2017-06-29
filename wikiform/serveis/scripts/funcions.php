@@ -155,7 +155,7 @@ function llegeixtitols($fitxer) {
  * @ $pattern: nom de l'arxiu o extensió a incloure a la llista
  */
 
-function index_array($directory = "../../../data/pages/", $pattern = 'index.txt', $recursive = true) {
+function index_array($directory = "../../wikiform/data/pages/", $pattern = 'index.txt', $recursive = true) {
 
     $array_items = array();
     if ($handle = opendir($directory)) {
@@ -185,7 +185,7 @@ function index_array($directory = "../../../data/pages/", $pattern = 'index.txt'
         closedir($handle);
     }
     foreach ($array_items as &$item) {
-        $item = str_replace("../../../data/pages/", "", $item);
+        $item = str_replace("../../wikiform/data/pages/", "", $item);
     }
     deleteFromArray($array_items, $pattern, $useOldKeys = FALSE);
     $result = natsort($array_items);
