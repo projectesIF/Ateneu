@@ -23,6 +23,7 @@ if ($footer_page_exists):
     </div>
   </div>
 </footer>
+<?php endif; ?>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -30,4 +31,3 @@ if ($footer_page_exists):
   gtag('config', 'UA-102249957-3');
 </script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-102249957-3"></script>
-<?php endif; ?>
