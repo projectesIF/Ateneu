@@ -39,10 +39,10 @@ include_once(dirname(__FILE__).'/tpl_global.php'); // Include template global va
 
   <header id="dokuwiki__header" class="dokuwiki container<?php echo (bootstrap3_is_fluid_container()) ? '-fluid' : '' ?>">
     <?php tpl_includeFile('topheader.html') ?>
-// Ateneu - Inici
-// 12042018 Treu barra de navegació de la plantilla de visualització d'una imatge
+<!--Ateneu - Inici
+12042018 Treu barra de navegació de la plantilla de visualització d'una imatge-->
 <!--    <?php require_once('tpl_navbar.php'); ?>-->
-// Ateneu - Fi
+<!--Ateneu - Fi-->
     <?php tpl_includeFile('header.html') ?>
   </header>
 
@@ -82,8 +82,8 @@ include_once(dirname(__FILE__).'/tpl_global.php'); // Include template global va
           <?php tpl_img(900, 700); /* the image; parameters: maximum width, maximum height (and more) */ ?>
 
           <hr class="hidden-print" />
-// Ateneu - Inici
-// 12042018 Neteja la plantilla de visualització d'una imatge
+<!--Ateneu - Inici
+12042018 Neteja la plantilla de visualització d'una imatge-->
 <!--
           <div class="hidden-print pull-right">
             <?php
@@ -95,7 +95,7 @@ include_once(dirname(__FILE__).'/tpl_global.php'); // Include template global va
             ?>
           </div>
 -->
-// Ateneu - Fi
+<!--Ateneu - Fi-->
           <div class="modal fade" tabindex="-1" id="detail-dialog" role="dialog">
             <div class="modal-dialog">
               <div class="modal-content">

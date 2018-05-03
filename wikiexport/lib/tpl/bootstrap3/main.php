@@ -32,10 +32,10 @@ include_once(dirname(__FILE__).'/tpl_global.php'); // Include template global va
   <![endif]-->
 </head>
 <?php tpl_flush() ?>
-// Ateneu - Inici
-// 12042018 Afegim id "inici" com tenia la plantilla anterior, pel funcionament els enllaços existents a l'àncora
+<!--Ateneu - Inici
+12042018 Afegim id "inici" com tenia la plantilla anterior, pel funcionament els enllaços existents a l'àncora-->
 <body id="inici" class="<?php echo trim(implode(' ', $body_classes)) ?>">
-// Ateneu - Fi
+<!--Ateneu - Fi-->
   <!--[if IE 8 ]><div id="IE8"><![endif]-->
 
   <?php tpl_includeFile('topheader.html') ?>
